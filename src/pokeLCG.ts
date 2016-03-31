@@ -6,7 +6,7 @@ export const GEN3_ARG: LCGArg             = Object.freeze({multiplier: 0x41C64E6
 export const GEN4_ARG: LCGArg             = Object.freeze({multiplier: 0x41C64E6D, increment: 0x6073});
 export const GEN4_ALTERNATIVE_ARG: LCGArg = Object.freeze({multiplier: 0x41C64E6D, increment: 0x6073});
 
-export function* generator(lcgArg: LCGArg, initialSeed: number, maxFrame?: number): Iterable<number> {
+export function* generator(lcgArg: LCGArg, initialSeed: number, maxFrame?: number): IterableIterator<number> {
     yield 0;
 }
 
