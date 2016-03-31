@@ -1,0 +1,8 @@
+{
+  "name": "poke-lcg",
+  "version": false,
+  "dependencies": {},
+  "ambientDevDependencies": {
+    "power-assert": "registry:dt/power-assert#0.0.0+20160316155526"
+  }
+}
