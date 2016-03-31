@@ -30,12 +30,26 @@ describe('generator', () => {
         assert.deepEqual(g.return(4), {value: 4, done: true});
     });
 
-    it('generator#throw(e: Error)', () => {
+    it('generator#throw(e: any)', () => {
         const g = generator(GEN3_ARG, 0x00000000);
 
-        assert(g.throw().message                     === undefined);
-        assert(g.throw(new Error()).message          === '');
-        assert(g.throw(new Error('message')).message === 'message');
+        try {
+            g.throw();
+        } catch (e) {
+            assert(e === undefined);
+        }
+
+        try {
+            g.throw(new Error());
+        } catch (e) {
+            assert(e.message === '');
+        }
+
+        try {
+            g.throw(new Error('message'));
+        } catch (e) {
+            assert(e.message === 'message');
+        }
     });
 
     it('done', () => {
