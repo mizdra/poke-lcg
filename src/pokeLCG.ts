@@ -12,9 +12,8 @@ export const GEN4_ARG: LCGArg             = Object.freeze({multiplier: 0x41C64E6
 export const GEN4_ALTERNATIVE_ARG: LCGArg = Object.freeze({multiplier: 0x41C64E6D, increment: 0x6073});
 
 export function* generator(lcgArg: LCGArg, initialSeed: number, maxFrame: number = Infinity): IterableIterator<number> {
-    if (maxFrame < 0) {
+    if (maxFrame < 0)
         throw new RangeError("Invalid maxFrame.");
-    }
 
     let seed: number           = initialSeed;
     let advancingFrame: number = treatSentFrame(undefined);
@@ -26,19 +25,16 @@ export function* generator(lcgArg: LCGArg, initialSeed: number, maxFrame: number
         advancingFrame--;
         maxFrame--;
 
-        if (advancingFrame === 0) {
+        if (advancingFrame === 0)
             advancingFrame = treatSentFrame(yield seed);
-        }
     }
 }
 
 function treatSentFrame (sentFrame: number = 1): number {
-    if (sentFrame < 1) {
+    if (sentFrame < 1)
         throw new RangeError("Invalid arguments of Generator.prototype.next.");
-    }
     return sentFrame;
 }
-
 
 function u32(x: number): number {
     return x >>> 0;
