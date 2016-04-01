@@ -62,3 +62,12 @@ describe('LCGArg', () => {
         assert.deepEqual(GEN4_ALTERNATIVE_ARG, {multiplier: 0x41C64E6D, increment: 0x6073});
     });
 });
+
+describe('ES2015', () => {
+    it('Spread operator', () => {
+        const g = generator(GEN3_ARG, 0x00000000, 3);
+        const actual = [...g];
+        const expect = [0x00006073, 0xe97e7b6a, 0x52713895];
+        assert.deepEqual(actual, expect);
+    });
+});
