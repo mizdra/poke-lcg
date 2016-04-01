@@ -17,7 +17,7 @@
         "label-undefined": true,
         "no-any": false,
         "no-arg": true,
-        "no-bitwise": true,
+        "no-bitwise": false,
         "no-consecutive-blank-lines": true,
         "no-construct": true,
         "no-duplicate-key": true,
