@@ -36,9 +36,9 @@ describe('generator', () => {
     it('generator#return(value: any)', () => {
         const g = generator(GEN3_ARG, 0x00000000);
 
-        assert.deepEqual(g.return(2), {value: 2, done: true});
-        assert.deepEqual(g.return(4), {value: 4, done: true});
-        assert.deepEqual(g.return(8), {value: 8, done: true});
+        assert.deepEqual(g.return(2), {value: 2        , done: true});
+        assert.deepEqual(g.return(4), {value: undefined, done: true});
+        assert.deepEqual(g.return(8), {value: undefined, done: true});
     });
 
     it('generator#throw(e: any)', () => {
