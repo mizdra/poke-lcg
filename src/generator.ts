@@ -13,13 +13,13 @@ export function* generator(lcgArg: LCGArg, initialSeed: number, maxFrame: number
     // let advancingFrame: number = treatSentFrame(function.sent);
 
     while (maxFrame > 0) {
-        seed = u32(Math.imul(lcgArg.multiplier, seed) + lcgArg.increment);
+        seed = Math.imul(lcgArg.multiplier, seed) + lcgArg.increment;
 
         advancingFrame--;
         maxFrame--;
 
         if (advancingFrame === 0)
-            advancingFrame = treatSentFrame(yield seed);
+            advancingFrame = treatSentFrame(yield u32(seed));
     }
 }
 
@@ -31,10 +31,4 @@ function treatSentFrame (sentFrame: number = 1): number {
 
 function u32(x: number): number {
     return x >>> 0;
-}
-
-function mul(a: number, b: number): number {
-	const a1 = a >>> 16, a2 = a & 0xffff;
-	const b1 = b >>> 16, b2 = b & 0xffff;
-	return u32(((a1 * b2 + a2 * b1) << 16) + a2 * b2);
 }
