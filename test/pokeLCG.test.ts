@@ -51,15 +51,15 @@ describe('generator', () => {
 
 describe('LCGArg', () => {
     it('GEN3_ARG', () => {
-        assert.deepEqual(GEN3_ARG, {multiplier: 0x41C64E6D, increment: 0x6073});
+        assert.deepEqual(GEN3_ARG, {multiplier: 0x41C64E6D, increment: 0x0006073});
     });
 
     it('GEN4_ARG', () => {
-        assert.deepEqual(GEN4_ARG, {multiplier: 0x41C64E6D, increment: 0x6073});
+        assert.deepEqual(GEN4_ARG, {multiplier: 0x41C64E6D, increment: 0x0006073});
     });
 
     it('GEN4_ALTERNATIVE_ARG', () => {
-        assert.deepEqual(GEN4_ALTERNATIVE_ARG, {multiplier: 0x41C64E6D, increment: 0x6073});
+        assert.deepEqual(GEN4_ALTERNATIVE_ARG, {multiplier: 0x6C078965, increment: 0x00000001});
     });
 });
 
