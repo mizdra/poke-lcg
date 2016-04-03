@@ -1,5 +1,5 @@
 {
-  "name": "poke-lcg",
+  "name": "@mizdra/poke-lcg",
   "version": "0.0.1",
   "description": "The LCG tool for Pokemon",
   "main": "./lib/index.js",
