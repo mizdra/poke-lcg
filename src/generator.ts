@@ -19,7 +19,7 @@ export function* generator(lcgArg: LCGArg, initialSeed: number, maxFrame: number
         maxFrame--;
 
         if (advancingFrame === 0)
-            advancingFrame = treatSentFrame(yield u32(seed));
+            advancingFrame = treatSentFrame(yield seed);
     }
 }
 
@@ -27,8 +27,4 @@ function treatSentFrame (sentFrame: number = 1): number {
     if (sentFrame < 1)
         throw new RangeError("Invalid arguments of Generator.prototype.next.");
     return sentFrame;
-}
-
-function u32(x: number): number {
-    return x >>> 0;
 }
