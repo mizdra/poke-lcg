@@ -13,7 +13,7 @@ export function* generator(lcgArg: LCGArg, initialSeed: number, maxFrame: number
     // let advancingFrame: number = treatSentFrame(function.sent);
 
     while (maxFrame > 0) {
-        seed = u32(mul(lcgArg.multiplier, seed) + lcgArg.increment);
+        seed = u32(Math.imul(lcgArg.multiplier, seed) + lcgArg.increment);
 
         advancingFrame--;
         maxFrame--;
