@@ -1,8 +1,8 @@
-/// <reference path="../node_modules/typescript/lib/lib.es6.d.ts" />
+/// <reference path="../../node_modules/typescript/lib/lib.es6.d.ts" />
 
 'use strict';
 
-import {LCGArg} from './lcgArg';
+import {Uint32LCGArg} from './uint32LCGArg';
 
 /**
  * The generator for LCG.
@@ -13,7 +13,7 @@ import {LCGArg} from './lcgArg';
  * @param maxFrame    - The max frame to be able to be advanced
  * @returns           - A iterator
  */
-export function* generator(lcgArg: LCGArg, initialSeed: number, maxFrame: number = Infinity): IterableIterator<number> {
+export function* generator(lcgArg: Uint32LCGArg, initialSeed: number, maxFrame: number = Infinity): IterableIterator<number> {
     if (maxFrame < 0)
         throw new RangeError("Invalid maxFrame.");
 
