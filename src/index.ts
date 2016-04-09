@@ -2,6 +2,6 @@
 
 import "babel-polyfill";
 
-export * from './generator';
-export * from './lcgArg';
-export * from './calcInverseArg';
+import {Uint32LCG, Uint32LCGArg} from './uint32LCG/uint32LCG';
+
+export {Uint32LCG, Uint32LCGArg};

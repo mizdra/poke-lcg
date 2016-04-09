@@ -2,7 +2,7 @@
 
 'use strict';
 
-import {generator, GEN3_ARG} from '../';
+import {Uint32LCG} from '../';
 import * as assert from 'power-assert';
 
 function u32(x: number): number {
@@ -11,7 +11,7 @@ function u32(x: number): number {
 
 describe('ES2015', () => {
     it('Spread operator', () => {
-        const g = generator(GEN3_ARG, 0x00000000, 3);
+        const g = Uint32LCG.generator(Uint32LCG.GEN3_ARG, 0x00000000, 3);
 
         const actual: number[] = [];
         for (const seed of g)
