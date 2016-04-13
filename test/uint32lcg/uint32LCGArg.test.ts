@@ -1,11 +1,11 @@
-/// <reference path="../typings/main.d.ts" />
+/// <reference path="../../typings/main.d.ts" />
 
 'use strict';
 
-import {Uint32LCG} from '../';
+import {Uint32LCG} from '../../';
 import * as assert from 'power-assert';
 
-describe('LCGArg', () => {
+describe('Uint32LCGArg', () => {
     it('GEN3_ARG', () => {
         assert.deepEqual(Uint32LCG.GEN3_ARG, {multiplier: 0x41C64E6D, increment: 0x0006073});
     });

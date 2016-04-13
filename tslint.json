@@ -25,7 +25,7 @@
         "no-empty": false,
         "no-eval": true,
         "no-string-literal": false,
-        "no-internal-module": true,
+        "no-internal-module": false,
         "no-trailing-whitespace": true,
         "no-unreachable": true,
         "no-unused-expression": true,

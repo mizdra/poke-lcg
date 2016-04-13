@@ -1,8 +1,8 @@
-/// <reference path="../typings/main.d.ts" />
+/// <reference path="../../typings/main.d.ts" />
 
 'use strict';
 
-import {Uint32LCG} from '../';
+import {Uint32LCG} from '../../';
 import * as assert from 'power-assert';
 
 function u32(x: number): number {

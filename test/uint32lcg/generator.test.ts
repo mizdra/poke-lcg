@@ -1,9 +1,9 @@
-/// <reference path="../typings/main.d.ts" />
-/// <reference path="../node_modules/typescript/lib/lib.es6.d.ts" />
+/// <reference path="../../typings/main.d.ts" />
+/// <reference path="../../node_modules/typescript/lib/lib.es6.d.ts" />
 
 'use strict';
 
-import {Uint32LCG} from '../';
+import {Uint32LCG} from '../../';
 import * as assert from 'power-assert';
 
 function u32(result: IteratorResult<number>): IteratorResult<number> {
