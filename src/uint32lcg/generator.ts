@@ -2,7 +2,7 @@
 
 'use strict';
 
-import {Uint32LCGArg} from './uint32LCGArg';
+import {IUint32LCGArg} from './uint32LCGArg';
 
 /**
  * The generator for LCG.
@@ -13,7 +13,7 @@ import {Uint32LCGArg} from './uint32LCGArg';
  * @param maxFrame    - The max frame to be able to be advanced
  * @returns           - A iterator
  */
-export function* generator(lcgArg: Uint32LCGArg, initialSeed: number, maxFrame: number = Infinity): IterableIterator<number> {
+export function* generator(lcgArg: IUint32LCGArg, initialSeed: number, maxFrame: number = Infinity): IterableIterator<number> {
     if (maxFrame < 0)
         throw new RangeError("Invalid maxFrame.");
 

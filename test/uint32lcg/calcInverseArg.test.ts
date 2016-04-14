@@ -2,10 +2,10 @@
 
 'use strict';
 
-import {Uint32LCG, Uint32LCGArg} from '../../';
+import {Uint32LCG, IUint32LCGArg} from '../../';
 import * as assert from 'power-assert';
 
-function u32(lcgArg: Uint32LCGArg): Uint32LCGArg {
+function u32(lcgArg: IUint32LCGArg): IUint32LCGArg {
     return {
         multiplier: lcgArg.multiplier >>> 0,
         increment: lcgArg.increment >>> 0

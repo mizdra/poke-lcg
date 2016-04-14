@@ -2,6 +2,6 @@
 
 import "babel-polyfill";
 
-import {Uint32LCG, Uint32LCGArg} from './uint32LCG/uint32LCG';
+import {Uint32LCG, IUint32LCGArg} from './uint32LCG/uint32LCG';
 
-export {Uint32LCG, Uint32LCGArg};
+export {Uint32LCG, IUint32LCGArg};
