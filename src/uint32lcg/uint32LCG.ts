@@ -11,6 +11,7 @@ import {
     GEN4_ALTERNATIVE_INVERSE_ARG
 } from './uint32LCGArg';
 import {calcInverseArg} from './calcInverseArg';
+import {toRandom, toHexString} from './util';
 
 export const Uint32LCG: any = {
     generator,
@@ -20,7 +21,9 @@ export const Uint32LCG: any = {
     GEN4_INVERSE_ARG,
     GEN4_ALTERNATIVE_ARG,
     GEN4_ALTERNATIVE_INVERSE_ARG,
-    calcInverseArg
+    calcInverseArg,
+    toRandom,
+    toHexString
 };
 
 export type IUint32LCGArg = IUint32LCGArg;
