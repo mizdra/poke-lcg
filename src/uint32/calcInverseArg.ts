@@ -1,14 +1,14 @@
 'use strict';
 
-import {IUint32LCGArg} from './uint32LCGArg';
+import {ILCGArg} from './lcgArg';
 
 /**
  * Calculates the inverse argument of LCG.
  * @param lcgArg - The regular argument of LCG
  * @returns      - The inverse argument of LCG
  */
-export function calcInverseArg(lcgArg: IUint32LCGArg): IUint32LCGArg {
-    let inverseArg: IUint32LCGArg = {multiplier: 0, increment: 0};
+export function calcInverseArg(lcgArg: ILCGArg): ILCGArg {
+    let inverseArg: ILCGArg = {multiplier: 0, increment: 0};
     const mask = 0xFFFFFFFF;
 
     inverseArg.multiplier = calcPow(lcgArg.multiplier, mask >>> 1, mask);

@@ -5,7 +5,7 @@
 import * as Uint32LCG from '../../uint32';
 import * as assert from 'power-assert';
 
-function u32(lcgArg: Uint32LCG.IUint32LCGArg): Uint32LCG.IUint32LCGArg {
+function u32(lcgArg: Uint32LCG.ILCGArg): Uint32LCG.ILCGArg {
     return {
         multiplier: lcgArg.multiplier >>> 0,
         increment: lcgArg.increment >>> 0
