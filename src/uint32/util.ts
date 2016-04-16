@@ -1,3 +1,5 @@
+'use strict';
+
 declare global {
     interface String {
         padStart(maxLength: number, fillString?: string): string;

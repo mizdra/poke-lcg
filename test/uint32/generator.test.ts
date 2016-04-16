@@ -3,7 +3,7 @@
 
 'use strict';
 
-import {Uint32LCG} from '../../';
+import * as Uint32LCG from '../../uint32';
 import * as assert from 'power-assert';
 
 function u32(result: IteratorResult<number>): IteratorResult<number> {

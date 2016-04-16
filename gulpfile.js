@@ -14,11 +14,11 @@ gulp.task('build', function () {
         .pipe(ts(tsProject));
 
     return merge([
-        tsResult.dts.pipe(gulp.dest('./lib')),
+        tsResult.dts.pipe(gulp.dest('.')),
         tsResult.js
             .pipe(babel())
             .pipe(sourcemaps.write())
-            .pipe(gulp.dest('./lib'))
+            .pipe(gulp.dest('.'))
     ]);
 });
 
@@ -26,6 +26,6 @@ gulp.task('watch', ['default'], function () {
     gulp.watch('src/**/*.ts', ['build']);
 });
 
-gulp.task('clean', del.bind(null, ['lib']));
+gulp.task('clean', del.bind(null, ['./uint32']));
 
 gulp.task('default', ['build']);

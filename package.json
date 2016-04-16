@@ -2,8 +2,6 @@
   "name": "@mizdra/poke-lcg",
   "version": "0.0.1",
   "description": "The LCG tool for Pokemon",
-  "main": "./lib/index.js",
-  "typings": "./lib/index.d.ts",
   "scripts": {
     "clean": "gulp clean",
     "build": "gulp build",
@@ -40,6 +38,6 @@
     "babel-polyfill": "^6.7.4"
   },
   "files": [
-    "lib"
+    "uint32"
   ]
 }
