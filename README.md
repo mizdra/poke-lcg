@@ -15,18 +15,18 @@ $ npm install @mizdra/poke-lcg
 
 ## Usage
 ```js
-import {Uint32LCG} from '@mizdra/poke-lcg';
+import * as Uint32LCG from '@mizdra/poke-lcg/uint32';
 
-const g1 = Uint32LCG.generator(GEN3_ARG, 0x00000000);
+const g1 = Uint32LCG.generator(Uint32LCG.GEN3_ARG, 0x00000000);
 console.log(Uint32LCG.toHexString(g1.next().value, 8)); // '00006073'
 console.log(Uint32LCG.toHexString(g1.next().value, 8)); // 'e97e7b6a'
 console.log(Uint32LCG.toHexString(g1.next().value, 8)); // '52713895'
 
-const g2 = Uint32LCG.generator(GEN3_ARG, 0x00000000, 3);
+const g2 = Uint32LCG.generator(Uint32LCG.GEN3_ARG, 0x00000000, 3);
 const seedList2 = [...g2].map<string>(seed => Uint32LCG.toHexString(seed, 8))
 console.log(seedList2); // ['00006073', 'e97e7b6a', '52713895']
 
-const g3 = Uint32LCG.generator(GEN3_INVERSE_ARG, 0x52713895, 3);
+const g3 = Uint32LCG.generator(Uint32LCG.GEN3_INVERSE_ARG, 0x52713895, 3);
 const seedList3 = [...g3].map<string>(seed => Uint32LCG.toHexString(seed, 8));
 console.log(seedList3); // ['e97e7b6a', '00006073', '00000000']
 ```

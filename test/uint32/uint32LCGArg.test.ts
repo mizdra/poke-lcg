@@ -2,7 +2,7 @@
 
 'use strict';
 
-import {Uint32LCG} from '../../';
+import * as Uint32LCG from '../../uint32';
 import * as assert from 'power-assert';
 
 describe('Uint32LCGArg', () => {
