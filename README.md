@@ -32,6 +32,10 @@ console.log(seedList3); // ['e97e7b6a', '00006073', '00000000']
 ```
 
 
+## API docs
+See [Documentation](http://mizdra.github.io/poke-lcg/).
+
+
 ## Build & Test
 ```bash
 # Setup
