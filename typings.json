@@ -3,6 +3,7 @@
   "version": false,
   "dependencies": {},
   "ambientDevDependencies": {
+    "jasmine": "registry:dt/jasmine#2.2.0+20160412134438",
     "power-assert": "registry:dt/power-assert#0.0.0+20160316155526"
   }
 }

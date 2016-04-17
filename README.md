@@ -15,32 +15,20 @@ $ npm install @mizdra/poke-lcg
 
 ## Usage
 ```js
-import {generator, GEN3_ARG, GEN3_INVERSE_ARG} from '@mizdra/poke-lcg';
+import * as Uint32LCG from '@mizdra/poke-lcg/uint32';
 
-function u32(x: number): number {
-    return x >>> 0;
-}
+const g1 = Uint32LCG.generator(Uint32LCG.GEN3_ARG, 0x00000000);
+console.log(Uint32LCG.toHexString(g1.next().value, 8)); // '00006073'
+console.log(Uint32LCG.toHexString(g1.next().value, 8)); // 'e97e7b6a'
+console.log(Uint32LCG.toHexString(g1.next().value, 8)); // '52713895'
 
-function toHex32(x: number): string {
-    return '0x' + u32(x.toString(16));
-}
+const g2 = Uint32LCG.generator(Uint32LCG.GEN3_ARG, 0x00000000, 3);
+const seedList2 = [...g2].map<string>(seed => Uint32LCG.toHexString(seed, 8))
+console.log(seedList2); // ['00006073', 'e97e7b6a', '52713895']
 
-const g1 = generator(GEN3_ARG, 0x00000000);
-console.log(toHex32(g1.next().value)); // 0x6073
-console.log(toHex32(g1.next().value)); // 0xe97e7b6a
-console.log(toHex32(g1.next().value)); // 0x52713895
-
-const g2 = generator(GEN3_ARG, 0x00000000, 3);
-console.log([...g2].map<string>(seed => toHex32(seed)));
-// [0]: 0x6073
-// [1]: 0xe97e7b6a
-// [2]: 0x52713895
-
-const g3 = generator(GEN3_INVERSE_ARG, 0x52713895, 3);
-console.log([...g3].map<string>(seed => toHex32(seed)));
-// [0]: 0xe97e7b6a
-// [1]: 0x6073
-// [2]: 0x0
+const g3 = Uint32LCG.generator(Uint32LCG.GEN3_INVERSE_ARG, 0x52713895, 3);
+const seedList3 = [...g3].map<string>(seed => Uint32LCG.toHexString(seed, 8));
+console.log(seedList3); // ['e97e7b6a', '00006073', '00000000']
 ```
 
 
@@ -50,7 +38,7 @@ console.log([...g3].map<string>(seed => toHex32(seed)));
 $ git clone https://github.com/mizdra/poke-lcg
 $ cd poke-lcg
 $ npm install
-$ npm install -g gulp mocha tslint typescript
+$ npm install -g typescript
 
 # Build
 $ npm run build
