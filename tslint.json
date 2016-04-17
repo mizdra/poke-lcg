@@ -11,7 +11,7 @@
             true,
             4
         ],
-        "interface-name": false,
+        "interface-name": [false, "always-prefix", "never-prefix"],
         "jsdoc-format": true,
         "label-position": true,
         "label-undefined": true,
