@@ -1,6 +1,3 @@
-/// <reference path="../../typings/main.d.ts" />
-/// <reference path="../../node_modules/typescript/lib/lib.es6.d.ts" />
-
 'use strict';
 
 import * as Uint32LCG from '../../uint32';
