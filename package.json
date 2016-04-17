@@ -1,6 +1,6 @@
 {
   "name": "@mizdra/poke-lcg",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "The LCG tool for Pokemon",
   "scripts": {
     "clean": "gulp clean",
