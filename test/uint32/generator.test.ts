@@ -29,19 +29,6 @@ describe('generator', () => {
         assert.deepEqual(u32(g3.next()), {value: undefined , done: true});
     });
 
-    it('generator#next(frame: any)', () => {
-        const g1 = Uint32LCG.generator(Uint32LCG.GEN3_ARG, 0x00000000);
-        assert.deepEqual(u32(g1.next(1)), {value: 0x00006073, done: false});
-
-        const g2 = Uint32LCG.generator(Uint32LCG.GEN3_ARG, 0x00000000);
-        assert.deepEqual(u32(g2.next(2)), {value: 0xe97e7b6a, done: false});
-        assert.deepEqual(u32(g2.next(4)), {value: 0xe2cca5ee, done: false});
-        assert.deepEqual(u32(g2.next(8)), {value: 0x993d6bb6, done: false});
-
-        const g3 = Uint32LCG.generator(Uint32LCG.GEN3_ARG, 0x00000000, 1);
-        assert.deepEqual(u32(g3.next(2)), {value: undefined , done: true});
-    });
-
     it('generator#return(value: any)', () => {
         const g = Uint32LCG.generator(Uint32LCG.GEN3_ARG, 0x00000000);
 
