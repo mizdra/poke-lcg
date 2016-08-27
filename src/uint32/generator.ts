@@ -1,6 +1,7 @@
 'use strict';
 
 import {ILCGArg} from './lcgArg';
+import {u32} from './util';
 
 /**
  * The generator for LCG.
@@ -16,7 +17,7 @@ export function* generator(lcgArg: ILCGArg, initialSeed: number, maxFrame: numbe
 
     let seed: number = initialSeed;
     while (maxFrame > 0) {
-        seed = Math.imul(lcgArg.multiplier, seed) + lcgArg.increment;
+        seed = u32(Math.imul(lcgArg.multiplier, seed) + lcgArg.increment);
         maxFrame--;
         yield seed;
     }

@@ -1,6 +1,7 @@
 'use strict';
 
 import {ILCGArg} from './lcgArg';
+import {u32} from './util';
 
 /**
  * Calculates the inverse argument of LCG.
@@ -11,8 +12,8 @@ export function calcInverseArg(lcgArg: ILCGArg): ILCGArg {
     let inverseArg: ILCGArg = {multiplier: 0, increment: 0};
     const mask = 0xFFFFFFFF;
 
-    inverseArg.multiplier = calcPow(lcgArg.multiplier, mask >>> 1, mask);
-    inverseArg.increment  = ~Math.imul(inverseArg.multiplier, lcgArg.increment) + 1;
+    inverseArg.multiplier = u32(calcPow(lcgArg.multiplier, mask >>> 1, mask));
+    inverseArg.increment  = u32(~Math.imul(inverseArg.multiplier, lcgArg.increment) + 1);
 
     return inverseArg;
 }
