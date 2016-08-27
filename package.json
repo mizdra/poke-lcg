@@ -7,6 +7,7 @@
     "build": "gulp build",
     "watch": "gulp watch",
     "lint": "tslint src/**/*.ts",
+    "pretest": "npm run lint",
     "test": "mocha --compilers ts:espower-typescript/guess test/**/*.test.ts"
   },
   "repository": {

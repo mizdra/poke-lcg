@@ -50,7 +50,7 @@ $ npm run build
 # Lint
 $ npm run lint
 
-# Test
+# Lint & Test
 $ npm test
 ```
 
