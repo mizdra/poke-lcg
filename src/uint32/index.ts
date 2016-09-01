@@ -10,11 +10,9 @@ import {
     GEN4_ALTERNATIVE_ARG,
     GEN4_ALTERNATIVE_INVERSE_ARG
 } from './lcgArg';
-import {generator} from './generator';
+import {generator, ILCGResult} from './generator';
 import {calcInverseArg} from './calcInverseArg';
 import {toRandom, toHexString} from './util';
-
-export type ILCGArg = ILCGArg;
 
 export {
     GEN3_ARG,
@@ -26,5 +24,7 @@ export {
     generator,
     calcInverseArg,
     toRandom,
-    toHexString
+    toHexString,
+    ILCGArg,
+    ILCGResult
 };
