@@ -1,7 +1,7 @@
 /**
  * The interface of LCG argument
  */
-export interface ILCGArg {
+export interface LCGArg {
     /**
      * The multiplier of LCG
      */

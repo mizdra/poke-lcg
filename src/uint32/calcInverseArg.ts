@@ -1,6 +1,6 @@
 'use strict';
 
-import {ILCGArg} from './lcg';
+import {LCGArg} from './lcg';
 import {u32} from './util';
 
 /**
@@ -8,8 +8,8 @@ import {u32} from './util';
  * @param lcgArg - The regular argument of LCG
  * @returns      - The inverse argument of LCG
  */
-export function calcInverseArg(lcgArg: ILCGArg): ILCGArg {
-    let inverseArg: ILCGArg = {multiplier: 0, increment: 0};
+export function calcInverseArg(lcgArg: LCGArg): LCGArg {
+    let inverseArg: LCGArg = {multiplier: 0, increment: 0};
     const mask = 0xFFFFFFFF;
 
     inverseArg.multiplier = u32(calcPow(lcgArg.multiplier, mask >>> 1, mask));

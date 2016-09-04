@@ -1,6 +1,6 @@
 'use strict';
 
-import {ILCGArg} from './lcg';
+import {LCGArg} from './lcg';
 import {u32} from './util';
 
 /**
@@ -12,10 +12,10 @@ import {u32} from './util';
  * @returns             - A iterator
  * @throws {RangeError} - `maxFrame` must be non-NaN
  */
-export function generator(lcgArg: ILCGArg, initialSeed: number, maxFrame: number = Infinity): IterableIterator<IGeneratorResult> {
+export function generator(lcgArg: LCGArg, initialSeed: number, maxFrame: number = Infinity): IterableIterator<GeneratorResult> {
     if (Number.isNaN(maxFrame)) throw new RangeError("Invalid maxFrame.");
 
-    return (function* (): IterableIterator<IGeneratorResult> {
+    return (function* (): IterableIterator<GeneratorResult> {
         const multiplier = u32(lcgArg.multiplier);
         const increment  = u32(lcgArg.increment);
         let seed         = u32(initialSeed);
@@ -32,7 +32,7 @@ export function generator(lcgArg: ILCGArg, initialSeed: number, maxFrame: number
 /**
  * The interface of `generator` return value
  */
-export interface IGeneratorResult {
+export interface GeneratorResult {
     /**
      * The index of LCG, which is the number of times that `generator#next()` is called'.
      * If IterableIterator#next() is called twice, index is 2.

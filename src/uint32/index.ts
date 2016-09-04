@@ -2,10 +2,10 @@
 
 import 'babel-polyfill';
 import * as constants from './constants';
-import {generator, IGeneratorResult} from './generator';
+import {generator, GeneratorResult} from './generator';
 import {calcInverseArg} from './calcInverseArg';
 import {toRandom, toHexString} from './util';
-import {ILCGArg} from './lcg';
+import {LCGArg} from './lcg';
 
 export {
     constants,
@@ -13,6 +13,6 @@ export {
     calcInverseArg,
     toRandom,
     toHexString,
-    IGeneratorResult,
-    ILCGArg
+    GeneratorResult,
+    LCGArg
 };
