@@ -1,6 +1,6 @@
 'use strict';
 
-import {ILCGArg} from './lcgArg';
+import {ILCGArg} from './lcg';
 import {u32} from './util';
 
 /**

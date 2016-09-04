@@ -36,14 +36,13 @@
             true,
             "check-catch",
             "check-else",
-            "check-open-brace",
             "check-whitespace"
         ],
         "quotemark": [
             false,
             "double"
         ],
-        "semicolon": [true, "never"],
+        "semicolon": [true, "always"],
         "trailing-comma": true,
         "triple-equals": [
             true,
