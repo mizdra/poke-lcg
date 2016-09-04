@@ -7,7 +7,7 @@ import * as Uint32LCG from '../../uint32';
 import * as assert from 'power-assert';
 
 const generator = Uint32LCG.generator;
-const GEN3_ARG = Uint32LCG.GEN3_ARG;
+const GEN3_ARG = Uint32LCG.constants.GEN3_ARG;
 
 describe('generator', function () {
     describe('argument', function () {
