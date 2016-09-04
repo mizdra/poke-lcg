@@ -1,3 +1,6 @@
+/// <reference path="../../typings/globals/mocha/index.d.ts" />
+/// <reference path="../../typings/globals/power-assert/index.d.ts" />
+
 'use strict';
 
 import * as Uint32LCG from '../../uint32';

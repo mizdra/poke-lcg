@@ -9,8 +9,6 @@
         "declaration": true
     },
     "files": [
-        "./typings/main/ambient/jasmine/index.d.ts",
-        "./typings/main/ambient/power-assert/index.d.ts",
         "./node_modules/typescript/lib/lib.es6.d.ts"
     ]
 }

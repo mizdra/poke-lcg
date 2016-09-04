@@ -1,9 +1,8 @@
 {
-  "name": "poke-lcg",
-  "version": false,
+  "name": "@mizdra/poke-lcg",
   "dependencies": {},
-  "ambientDevDependencies": {
-    "jasmine": "registry:dt/jasmine#2.2.0+20160412134438",
+  "globalDevDependencies": {
+    "mocha": "registry:dt/mocha#2.2.5+20160720003353",
     "power-assert": "registry:dt/power-assert#0.0.0+20160316155526"
   }
 }
