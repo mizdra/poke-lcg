@@ -1,7 +1,7 @@
 'use strict';
 
 import {LCGArg} from './lcg';
-import {u32} from './util';
+import toUint32 from './internal/toUint32';
 
 /**
  * The generator for LCG.
@@ -16,13 +16,13 @@ export function generator(lcgArg: LCGArg, initialSeed: number, maxFrame: number 
     if (Number.isNaN(maxFrame)) throw new RangeError("Invalid maxFrame.");
 
     return (function* (): IterableIterator<GeneratorResult> {
-        const multiplier = u32(lcgArg.multiplier);
-        const increment  = u32(lcgArg.increment);
-        let seed         = u32(initialSeed);
+        const multiplier = toUint32(lcgArg.multiplier);
+        const increment  = toUint32(lcgArg.increment);
+        let seed         = toUint32(initialSeed);
         let index        = 0;
 
         while (index < maxFrame) {
-            seed = u32(Math.imul(multiplier, seed) + increment);
+            seed = toUint32(Math.imul(multiplier, seed) + increment);
             index++;
             yield {seed, index};
         }
