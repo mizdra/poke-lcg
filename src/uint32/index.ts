@@ -2,7 +2,7 @@
 
 import 'babel-polyfill';
 import * as constants from './constants';
-import {generator, ILCGResult} from './generator';
+import {generator, IGeneratorResult} from './generator';
 import {calcInverseArg} from './calcInverseArg';
 import {toRandom, toHexString} from './util';
 import {ILCGArg} from './lcg';
@@ -13,6 +13,6 @@ export {
     calcInverseArg,
     toRandom,
     toHexString,
-    ILCGResult,
+    IGeneratorResult,
     ILCGArg
 };
