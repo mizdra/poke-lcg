@@ -8,7 +8,7 @@ import * as assert from 'power-assert';
 
 describe('util', () => {
     it('toRandom', () => {
-        assert(Uint32LCG.toRandom(0x12345678 ) === 0x1234);
-        assert(Uint32LCG.toRandom(0x100000000) === 0x0000);
+        assert(Uint32LCG.util.toRandom(0x12345678 ) === 0x1234);
+        assert(Uint32LCG.util.toRandom(0x100000000) === 0x0000);
     });
 });
