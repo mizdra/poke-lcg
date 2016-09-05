@@ -6,13 +6,13 @@
 import * as Uint32LCG from '../../uint32';
 import * as assert from 'power-assert';
 
-const generator = Uint32LCG.generator;
+const indexedGenerator = Uint32LCG.indexedGenerator;
 const GEN3_ARG = Uint32LCG.constants.GEN3_ARG;
 
-describe('generator', function () {
+describe('indexedGenerator', function () {
     describe('argument', function () {
         describe('lcgArg', function () {
-            const fn = (lcgArg) => generator(lcgArg, 0x00000001).next().value.seed;
+            const fn = (lcgArg) => indexedGenerator(lcgArg, 0x00000001).next().value.seed;
             describe('treated as unsigned 32-bit integer', function () {
                 it('integer', function () {
                     assert(fn({multiplier: 1 , increment: 0}) === 0x00000001);
@@ -43,7 +43,7 @@ describe('generator', function () {
 
         describe('initialSeed', function () {
             const ARG = {multiplier: 1, increment: 0};
-            const fn = (initialSeed: number) => generator(ARG, initialSeed).next().value.seed;
+            const fn = (initialSeed: number) => indexedGenerator(ARG, initialSeed).next().value.seed;
             describe('treated as unsigned 32-bit integer', function () {
                 it('integer', function () {
                     assert(fn(0x00000000 - 1) === 0xFFFFFFFF);
@@ -68,46 +68,46 @@ describe('generator', function () {
         describe('maxFrame', function () {
             describe('greater than or equal to 0', function () {
                 it('0', function () {
-                    const g = generator(GEN3_ARG, 0, 0);
+                    const g = indexedGenerator(GEN3_ARG, 0, 0);
                     assert(g.next().done === true);
                 });
 
                 it('natural number', function () {
-                    const g = generator(GEN3_ARG, 0, 1);
+                    const g = indexedGenerator(GEN3_ARG, 0, 1);
                     assert(g.next().done === false);
                     assert(g.next().done === true);
                 });
 
                 it('negative number', function () {
-                    const g = generator(GEN3_ARG, 0, -1);
+                    const g = indexedGenerator(GEN3_ARG, 0, -1);
                     assert(g.next().done === true);
                 });
 
                 it('not a NaN', function () {
-                    assert.throws(() => generator(GEN3_ARG, 0, NaN), RangeError);
+                    assert.throws(() => indexedGenerator(GEN3_ARG, 0, NaN), RangeError);
                 });
             });
         });
     });
 
-    describe('generator#next()', function () {
+    describe('indexedGenerator#next()', function () {
         describe('seed', function () {
             it('basic calculation', function () {
-                const g = generator(GEN3_ARG, 0x00000000);
+                const g = indexedGenerator(GEN3_ARG, 0x00000000);
                 assert(g.next().value.seed === 0x00006073);
                 assert(g.next().value.seed === 0xe97e7b6a);
                 assert(g.next().value.seed === 0x52713895);
             });
 
             it('less than or equal to 0xFFFFFFFF', function () {
-                const g = generator({multiplier: 1, increment: 1}, 0xFFFFFFFE);
+                const g = indexedGenerator({multiplier: 1, increment: 1}, 0xFFFFFFFE);
                 assert(g.next().value.seed === 0xFFFFFFFF);
                 assert(g.next().value.seed === 0x00000000);
             });
         });
 
-        it('`index` is incremented by 1 every time `generator#next()` is called', function () {
-            const g = generator(GEN3_ARG, 0x00000000);
+        it('`index` is incremented by 1 every time `indexedGenerator#next()` is called', function () {
+            const g = indexedGenerator(GEN3_ARG, 0x00000000);
             assert(g.next().value.index === 1);
             assert(g.next().value.index === 2);
             assert(g.next().value.index === 3);
