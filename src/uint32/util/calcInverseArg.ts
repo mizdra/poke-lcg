@@ -1,14 +1,14 @@
 'use strict';
 
-import {LCGArg} from './lcg';
-import toUint32 from './internal/toUint32';
+import {LCGArg} from '../core';
+import toUint32 from '../internal/toUint32';
 
 /**
  * Calculates the inverse argument of LCG.
  * @param lcgArg - The regular argument of LCG
  * @returns      - The inverse argument of LCG
  */
-export function calcInverseArg(lcgArg: LCGArg): LCGArg {
+export default function calcInverseArg(lcgArg: LCGArg): LCGArg {
     let inverseArg: LCGArg = {multiplier: 0, increment: 0};
     const mask = 0xFFFFFFFF;
 
@@ -28,13 +28,4 @@ export function calcInverseArg(lcgArg: LCGArg): LCGArg {
 function calcPow(a: number, n: number, mask: number): number {
     return n === 0 ? 1 :
         Math.imul((n & 1 ? a : 1), calcPow(Math.imul(a, a) & mask, n >>> 1, mask));
-}
-
-/**
- * Converts seeed to random, which is the upper 16 bits of a seed.
- * @param seed - A seed
- * @returns    - The random to be converted
- */
-export function toRandom(seed: number): number {
-    return seed >>> 16;
 }
