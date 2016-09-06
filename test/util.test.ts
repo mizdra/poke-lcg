@@ -1,10 +1,10 @@
-/// <reference path="../../typings/globals/mocha/index.d.ts" />
-/// <reference path="../../typings/globals/power-assert/index.d.ts" />
+/// <reference path="../typings/globals/mocha/index.d.ts" />
+/// <reference path="../typings/globals/power-assert/index.d.ts" />
 
 'use strict';
 
-import {calcInverseArg, toRandom} from '../../uint32/util';
-import {GEN3_ARG, GEN4_ARG, GEN4_ALTERNATIVE_ARG} from '../../uint32/constant';
+import {calcInverseArg, toRandom} from '../util';
+import {GEN3_ARG, GEN4_ARG, GEN4_ALTERNATIVE_ARG} from '../constant';
 import * as assert from 'power-assert';
 
 describe('util', () => {

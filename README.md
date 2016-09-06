@@ -1,5 +1,5 @@
-# poke-lcg
-The LCG tool for Pokemon.
+# poke-uint32-lcg
+The Uint32 LCG tool for Pokemon.
 
 
 ## Feature
@@ -9,13 +9,13 @@ The LCG tool for Pokemon.
 
 ## Install
 ```bash
-$ npm install @mizdra/poke-lcg
+$ npm install mizdra/poke-uint32-lcg
 ```
 
 
 ## Usage
 ```js
-import * as Uint32LCG from '@mizdra/poke-lcg/uint32';
+import * as Uint32LCG from 'poke-uint32-lcg';
 
 const g1 = Uint32LCG.generator(Uint32LCG.GEN3_ARG, 0x00000000);
 console.log(Uint32LCG.toHexString(g1.next().value, 8)); // '00006073'
@@ -33,14 +33,14 @@ console.log(seedList3); // ['e97e7b6a', '00006073', '00000000']
 
 
 ## API docs
-See [Documentation](http://mizdra.github.io/poke-lcg/).
+See [Documentation](http://mizdra.github.io/poke-uint32-lcg/).
 
 
 ## Build & Test
 ```bash
 # Setup
-$ git clone https://github.com/mizdra/poke-lcg
-$ cd poke-lcg
+$ git clone https://github.com/mizdra/poke-uint32-lcg
+$ cd poke-uint32-lcg
 $ npm install
 $ npm install -g typescript
 

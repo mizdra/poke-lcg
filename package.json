@@ -1,7 +1,7 @@
 {
-  "name": "@mizdra/poke-lcg",
+  "name": "@mizdra/poke-uint32-lcg",
   "version": "0.0.5",
-  "description": "The LCG tool for Pokemon",
+  "description": "The Uint32 LCG tool for Pokemon",
   "scripts": {
     "clean": "gulp clean",
     "build": "gulp build",
@@ -12,14 +12,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mizdra/poke-lcg.git"
+    "url": "git+https://github.com/mizdra/poke-uint32-lcg.git"
   },
   "author": "mizdra",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/mizdra/poke-lcg/issues"
+    "url": "https://github.com/mizdra/poke-uint32-lcg/issues"
   },
-  "homepage": "https://github.com/mizdra/poke-lcg#readme",
+  "homepage": "https://github.com/mizdra/poke-uint32-lcg#readme",
   "devDependencies": {
     "babel-plugin-transform-runtime": "^6.15.0",
     "babel-preset-es2015": "^6.6.0",
