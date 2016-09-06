@@ -1,5 +1,3 @@
-'use strict';
-
 import {LCGArg} from './lcgArg';
 import toUint32 from '../internal/toUint32';
 

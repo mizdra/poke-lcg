@@ -1,5 +1,3 @@
-'use strict';
-
 /**
  * Converts seeed to random, which is the upper 16 bits of a seed.
  * @param seed - A seed

@@ -1,5 +1,3 @@
-'use strict';
-
 import {LCGArg} from '../core';
 
 /**

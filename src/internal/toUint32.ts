@@ -1,5 +1,3 @@
-'use strict';
-
 /**
  * Cast a unsighed 32-bit integer.
  * @param num - A number
