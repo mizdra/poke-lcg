@@ -1,5 +1,5 @@
 {
-  "name": "@mizdra/poke-lcg",
+  "name": "@mizdra/poke-uint32-lcg",
   "dependencies": {},
   "globalDevDependencies": {
     "mocha": "registry:dt/mocha#2.2.5+20160720003353",
