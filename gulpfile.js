@@ -27,7 +27,7 @@ gulp.task('watch', ['default'], function () {
     gulp.watch('src/**/*.ts', ['build']);
 });
 
-gulp.task('clean', del.bind(null, ['./uint32']));
+gulp.task('clean', del.bind(null, ['./core', './constant', './util', './internal']));
 
 gulp.task('typedoc', function() {
     return gulp.src('src/**/*.ts')

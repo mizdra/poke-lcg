@@ -1,13 +1,13 @@
-/// <reference path="../../typings/globals/mocha/index.d.ts" />
-/// <reference path="../../typings/globals/power-assert/index.d.ts" />
+/// <reference path="../typings/globals/mocha/index.d.ts" />
+/// <reference path="../typings/globals/power-assert/index.d.ts" />
 
 'use strict';
 
-import {generator, indexedGenerator} from '../../uint32/core';
-import {GEN3_ARG} from '../../uint32/constant';
+import {generator, indexedGenerator} from '../core';
+import {GEN3_ARG} from '../constant';
 import * as assert from 'power-assert';
 
-describe('generator', function () {
+describe('core', function () {
     describe('generator', function () {
         describe('argument', function () {
             describe('lcgArg', function () {

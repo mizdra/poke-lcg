@@ -1,5 +1,5 @@
-/// <reference path="../../typings/globals/mocha/index.d.ts" />
-/// <reference path="../../typings/globals/power-assert/index.d.ts" />
+/// <reference path="../typings/globals/mocha/index.d.ts" />
+/// <reference path="../typings/globals/power-assert/index.d.ts" />
 
 'use strict';
 
@@ -10,7 +10,7 @@ import {
     GEN4_INVERSE_ARG,
     GEN4_ALTERNATIVE_ARG,
     GEN4_ALTERNATIVE_INVERSE_ARG
-} from '../../uint32/constant';
+} from '../constant';
 import * as assert from 'power-assert';
 
 describe('constant', () => {
