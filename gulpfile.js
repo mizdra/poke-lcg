@@ -35,7 +35,6 @@ gulp.task('typedoc', function() {
             module: 'commonjs',
             target: 'es6',
             out: './docs/',
-            entryPoint: './uint32/index.ts',
             name: 'poke-uint32-lcg',
             mode: 'file'
         }))
