@@ -6,7 +6,7 @@ import toUint32 from '../internal/toUint32';
  * @param lcgArg - The regular argument of LCG
  * @returns      - The inverse argument of LCG
  */
-export default function calcInverseArg(lcgArg: LCGArg): LCGArg {
+export default function calcInverseLCGArg(lcgArg: LCGArg): LCGArg {
     let inverseArg: LCGArg = {multiplier: 0, increment: 0};
     const mask = 0xFFFFFFFF;
 
