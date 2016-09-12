@@ -2,10 +2,10 @@ import {LCGArg} from '../core';
 import toUint32 from '../internal/toUint32';
 
 /**
- * Calclate index from a initial seed 0x00000000 to the targeted seed.
+ * Calclates index from a initial seed 0x00000000 to the targeted seed.
  * This function is based on http://d.hatena.ne.jp/oupo/20150128/1422413218 (author: oupo)
- * @param lcgArg - The argument of LCG, whose properties are treated as unsigned 32-bit integers
- * @param seed   - The seed, whose index is calculated
+ * @param lcgArg - The argument of LCG
+ * @param seed   - The seed, which is treated as an unsigned 32-bit integer
  * @returns      - The index from a initial seed 0x00000000 to seed
  */
 function calcIndexFrom0(lcgArg: LCGArg, seed: number) {

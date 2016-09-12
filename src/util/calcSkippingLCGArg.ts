@@ -13,13 +13,20 @@ import toUint32 from '../internal/toUint32';
  * @param lcgArg - The regular argument of LCG
  * @param skip   - The number of indexes to be advanced when next() is called
  * @returns      - The argument of LCG to advance `skip` indexes when next() is called
+ * @throws {RangeError} - `skip` must not be NaN
  */
 export default function calcSkippingLCGArg(lcgArg: LCGArg, skip: number): LCGArg {
     if (Number.isNaN(skip)) throw new RangeError("Invalid skip.");
 
-    // seed[n + 1] = (seed[n] * a + b) % 0x100000000
-    // seed[n + k] = seed[n] * a^k
-    //               + a^(k-1) * b + a^(k-2) * b + ... + ab + b
+    /**
+     * Caclulated by the method of least squares.
+     * seed[n + 1] = (seed[n] * a + b) % 0x100000000
+     * seed[n + k] = (seed[n] * a^k
+     *                + a^(k-1) * b + a^(k-2) * b + ... + ab + b
+     *               ) % 0x100000000
+     * c = a^k
+     * d = a^(k-1) * b + a^(k-2) * b + ... + ab + b
+     */
     let a = lcgArg.multiplier, b = lcgArg.increment;
     let c = 1, d = 0;
     while (skip) {

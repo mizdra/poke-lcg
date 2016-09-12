@@ -11,5 +11,6 @@ import { LCGArg } from '../core';
  * @param lcgArg - The regular argument of LCG
  * @param skip   - The number of indexes to be advanced when next() is called
  * @returns      - The argument of LCG to advance `skip` indexes when next() is called
+ * @throws {RangeError} - `skip` must not be NaN
  */
 export default function calcSkippingLCGArg(lcgArg: LCGArg, skip: number): LCGArg;
