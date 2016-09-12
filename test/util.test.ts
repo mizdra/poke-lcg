@@ -3,7 +3,7 @@
 
 'use strict';
 
-import {calcIndex, calcInverseArg, toRandom} from '../util';
+import {calcIndex, calcSkippingLCGArg, calcInverseArg, toRandom} from '../util';
 import {GEN3_ARG, GEN4_ARG, GEN4_ALTERNATIVE_ARG} from '../constant';
 import * as assert from 'power-assert';
 
@@ -59,6 +59,18 @@ describe('util', () => {
             const actual = calcInverseArg(GEN4_ALTERNATIVE_ARG);
             const expect = {multiplier: 0x9638806D, increment: 0x69C77F93};
             assert.deepEqual(actual, expect);
+        });
+    });
+
+    describe('calcSkippingLCGArg', () => {
+        it('LCGArg of Teachy TV', () => {
+            const actual = calcSkippingLCGArg(GEN3_ARG, 313);
+            const expect = {multiplier: 0x4A9EEACD, increment: 0x63FD404B};
+            assert.deepEqual(actual, expect);
+        });
+
+        it('`skip` is not NaN', () => {
+            assert.throws(() => calcSkippingLCGArg(GEN3_ARG, NaN), RangeError);
         });
     });
 
